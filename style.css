@@ -1,0 +1,108 @@
+body {
+	margin: 0;
+	background-image: url("img/background.png");
+	font-family: Verdana;
+	color: #915C64;
+	font-size: 0.8em;
+
+}
+
+a {
+	color: #915C64;
+	text-decoration: none;
+}
+
+h1 {
+	color: #915C64;
+	font-size: 20px;
+}
+
+h2 {
+	font-size: 16px;
+}
+
+.header {
+	text-align: center;
+}
+
+.menu {
+	margin: 10px;
+	background-color: #CAE9E0;
+	text-align: center;
+	padding: 10px;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0px;
+}
+
+.menu-pipe {
+	margin: 10px;
+}
+
+.content {
+	padding: 5px;
+	width: 70%;
+	margin-left: 15%;
+	background-color: #CAE9E0;
+	margin-top: 20px;
+}
+
+.content-list {
+	margin: 10px;
+	display: flex;
+}
+
+.contact-div {
+	margin: 20px;
+}
+
+.single-cover {
+	flex: 1;
+}
+
+.single-cover img {
+	width: 100%
+}
+
+.single-description {
+	margin: 5px;
+	flex: 11;
+}
+
+.content-cover {
+	flex: 2;
+}
+
+.hello-cover {
+	flex: 4;
+}
+
+.hello-cover img {
+	width: 100%;
+}
+
+.hello-description {
+	margin: 5px; 
+	text-align: justify;
+	flex: 8;
+	line-height: 1.25;
+}
+
+.content-cover img {
+	width: 100%;
+}
+
+.content-description {
+	margin: 5px;
+	flex: 8;
+}
+
+.flag {
+	margin-right: 5px;
+	width: 20px;
+	height: 15px;
+}
+
+	
+	
+	
