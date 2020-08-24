@@ -9,3 +9,4 @@
 - Make a better bio
 - Typos in RRJP
 - Add hyperlinks for listen links
+- lighter pictures
