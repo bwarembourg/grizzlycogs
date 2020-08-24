@@ -53,6 +53,11 @@ h2 {
 	display: flex;
 }
 
+.content-list-mobile {
+	margin: 10px;
+	display: flex;
+}
+
 .contact-div {
 	margin: 20px;
 }
@@ -104,6 +109,104 @@ h2 {
 	height: 15px;
 }
 
-	
-	
-	
+
+.full-mobile img {
+	width: 100%;
+}
+
+.content-mobile {
+	padding: 5px;
+	width: 90%;
+	margin-left: 5%;
+	background-color: #CAE9E0;
+	margin-top: 20px;
+}
+
+.hello-description-mobile {
+	margin: 5px; 
+	text-align: justify;
+}
+
+.content-grid {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.cover {
+	width: 46%;
+	margin: 2% 2%;
+}
+
+.single-cover-mobile {
+	width: 30%;
+	margin: 2% 0% 0% 2%;
+}
+
+.single-cover-mobile img {
+	width: 100%;
+}
+
+.cover img {
+	width: 100%;
+}
+
+.game {
+	height: 100%;
+}
+
+.show {
+	font-size: 0.8em;
+	padding: 5px;
+}
+
+.flag-mobile {
+	margin-right: 5px;
+	width: 35px;
+	height: 30px;
+}
+
+.contact-mobile {
+	font-size: 0.8em;
+}
+
+.popup {
+	display: none;
+	position: fixed;
+	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+	background-color: white;
+	border-radius: 10px;
+	left: 10%;
+	top: 10%;
+	width:80%;
+	padding: 5px;
+}
+
+.close-popup {
+	position: fixed;
+	right: 11%;
+	top: 11%;
+	width: 5%;
+}
+
+.close-popup img {
+	width: 100%;
+}
+
+.popup-img {
+	width: 80%;
+	margin: 5% 10%;
+	text-align: center;
+}
+
+.popup-img img {
+	width: 100%;
+}
+
+.popup h1 {
+	font-size: 2em;
+	text-align: center;
+}
+
+.popup p {
+	font-size: 2em;
+}

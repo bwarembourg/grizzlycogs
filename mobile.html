@@ -1,0 +1,490 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Grizzly Cogs</title>
+  <meta name="description" content="Grizzly Cogs website">
+  <meta name="author" content="Grizzly Cogs">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function openPopup(imgSrc, title, description, listenUrl, playUrl) {
+      document.getElementById('popup').style.display = 'block';
+      document.getElementById('img-popup').src = imgSrc;
+      document.getElementById('title').innerHTML = title;
+      document.getElementById('description').innerHTML = description;
+      if (listenUrl) {
+        document.getElementById('listen').style.display = 'block';
+        document.getElementById('listen-link').href = listenUrl;
+      } else {
+        document.getElementById('listen').style.display = 'none';
+      }
+      if (playUrl) {
+        document.getElementById('play').style.display = 'block';
+        document.getElementById('play-link').href = playUrl;
+      } else {
+        document.getElementById('play').style.display = 'none';
+      }
+    }
+
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+  </script>
+</head>
+<body>
+	<div class="header" id="home"><img src="img/header.png" /></div>
+	<div class="menu">
+		<a href="#hello">🐻 Hello !</a>
+		<span class="menu-pipe">|</span>
+		<a href="#releases">💿 Releases</a>
+		<span class="menu-pipe">|</span>
+		<a href="#game-soundtracks">🎮 Game soundtracks</a>
+		<span class="menu-pipe">|</span>
+		<a href="#shows">📆 Shows</a>
+		<span class="menu-pipe">|</span>
+		<a href="http://grizzlycogs.bandcamp.com" target="_blank">🎧 Listen</a>
+		<span class="menu-pipe">|</span>
+		<a href="#runrunjumppunch">🎹 Run! Run! Jump! Punch!</a>
+		<span class="menu-pipe">|</span>
+		<a href="#contact">🌠 Contact</a>
+	</div>
+	<!-- -->
+	<!-- HELLO -->
+	<!-- -->
+	<div id="hello" class="content-mobile">
+		<h1>🐻 Hello !</h1>
+		<div>
+			<div class="full-mobile">
+				<img src="img/hello.jpg" />
+				📷 <a href="https://loisedoyen.com/" target="_blank">Loïse Doyen</a>
+			</div>
+			<div class="hello-description-mobile">
+				Hello ! I'm Grizzly Cogs. I make electronic and chiptune music, and original soundtrack for games since 2015. 
+				Sometimes it is chill, sometimes it is catchy, sometimes it is melancholic, but it is always about feelings and nostalgia.<br /><br />
+				I released 4 albums and some singles. I also made soundtracks for some web or mobile indie games. 
+				From time to time I like to play my music live. I travelled in 7 countries and play ~30 gigs.<br /><br />
+				Here is a website where you can find all my work. Have fun 😃<br /><br />
+				These days i am participating in Weekly Beats, the best way to follow this is <a href="" target="_blank">to follow me on instagram</a>
+				<br />You can also listen to the tracks i have made so far <a href="https://soundcloud.com/grizzly-cogs" target="_blank">here</a>.
+			</div>
+		</div>
+	</div>
+	
+	<!-- -->
+	<!-- RELEASES -->
+	<!-- -->
+	<div id="releases" class="content-mobile">
+		<h1>💿 Releases</h1>
+    <h2>Albums :</h2>
+    <div class="content-grid">
+      <div class="cover"
+            onclick="openPopup(
+              'img/album-confettis.jpg',
+              'Confettis (2019)',
+              '15 tracks including :<br />4 remixes by dogsplusplus, TRIAC, Popsicle Theory, Xyce<br />Artwork by <a href=\'https://twitter.com/NoNameNoSocks target=\'_blank\'>NoNameNoSocks</a><br /><br />Self released.',
+              'https://grizzlycogs.bandcamp.com/album/confettis',
+              )"
+      >
+				<img src="img/album-confettis.jpg" />
+      </div>
+      <div class="cover"
+            onclick="openPopup(
+                    'img/album-deltaplane.jpg',
+                    'Deltaplane (2019)',
+                    '14 tracks including :<br />1 featuring with Vault Kid<br />4 remixes by Vault Kid, 3D63, Ganondorofu, Leplancton<br />Artwork by <a href=\'https://twitter.com/NoNameNoSocks\' target=\'_blank\'>NoNameNoSocks</a><br /><br />Originally released on Cheapbeats Records.',
+                    'https://grizzlycogs.bandcamp.com/album/deltaplane'
+                    )"
+      >
+				<img src="img/album-deltaplane.jpg" />
+      </div>
+      <div class="cover"
+            onclick="openPopup(
+              'img/album-flocons.jpg',
+              'Flocons (2017)',
+              '9 tracks<br />Artwork by <a href=\'https://twitter.com/NoNameNoSocks\' target=\'_blank\'>NoNameNoSocks</a><br /><br />Released on 56kbps Records.',
+              'https://grizzlycogs.bandcamp.com/album/flocons'
+              )"
+      >
+				<img src="img/album-flocons.jpg" />
+      </div>
+      <div class="cover"
+            onclick="openPopup(
+              'img/album-childishsounds.jpg',
+              'Childish Sounds (2017)',
+              '13 tracks<br /><br />Self released.',
+              'https://grizzlycogs.bandcamp.com/album/childish-sounds'
+              )"
+      >
+				<img src="img/album-childishsounds.jpg" />
+			</div>
+    </div>
+    <h2>Singles & EP :</h2>
+    <div class="content-grid">
+      <div class="single-cover-mobile"
+      onclick="openPopup(
+        'img/single-kangarave.jpg',
+        'Kangarave (2020)',
+        'Part of the \'Ohrbit Festival Sampler Vol. 2\' Compilation.',
+        'https://paziproductions.bandcamp.com/album/various-artists-ohrbit-festival-sampler-volume-2'
+        )"
+      >
+				<img src="img/single-kangarave.jpg" />
+      </div>
+      <div class="single-cover-mobile"
+      onclick="openPopup(
+        'img/single-findingcourage.jpg',
+        'Finding courage in a blanket (2020)',
+        'Part of the \'Chiptunes 4 autism Vol.5 : Sensory Fire\' Compilation.',
+        'https://chiptunes4autism.bandcamp.com/album/volume-5-sensory-fire'
+        )"
+      >
+				<img src="img/single-findingcourage.jpg" />
+      </div>
+      <div class="single-cover-mobile"
+      onclick="openPopup(
+        'img/single-lonelybirthday.jpg',
+        'Lonely Birthday (2020)',
+        'Part of the Pterodactyl Squad\'s \'Hikikomori\' Compilation.',
+        'https://ptesquad.bandcamp.com/album/hikikomori'
+        )"
+      >
+				<img src="img/single-lonelybirthday.jpg" />
+      </div>
+      <div class="single-cover-mobile"
+      onclick="openPopup(
+        'img/single-losdreams.jpg',
+        'Lo\'s Dreams (2019)',
+        'Part of the \'Chiplove Vol. 1\' Compilation.',
+        'https://chiplove.bandcamp.com/album/chiplove-vol-1'
+        )"
+      >
+				<img src="img/single-losdreams.jpg" />
+      </div>
+      <div class="single-cover-mobile"
+      onclick="openPopup(
+        'img/single-hibernation.jpg',
+        'Hibernation (2019)',
+        'An exclusive track made during the making of Deltaplane.',
+        'https://soundcloud.com/grizzly-cogs/hibernation'
+        )"
+      >
+				<img src="img/single-hibernation.jpg" />
+      </div>
+      <div class="single-cover-mobile"
+      onclick="openPopup(
+        'img/single-dancing.jpg',
+        'Dancing at the OK Club (2019)',
+        'Part of the \'Chiptunes 4 autism Vol. 4 : Infinite Potential\' Compilation.',
+        'https://chiptunes4autism.bandcamp.com/album/volume-4-infinite-potential'
+        )"
+      >
+				<img src="img/single-dancing.jpg" />
+      </div>
+      <div class="single-cover-mobile"
+      onclick="openPopup(
+        'img/single-noplan.jpg',
+        'No Plan (2018)',
+        'Part of the \'From Europe with Love\' Compilation.',
+        'https://chiplove.bandcamp.com/album/from-europe-with-love'
+        )"
+      >
+				<img src="img/single-noplan.jpg" />
+      </div>
+      <div class="single-cover-mobile"
+      onclick="openPopup(
+        'img/single-heartbreakingnews.jpg',
+        'Heartbreaking News (2018)',
+        'Part of the \'Chipbanger & Friends Vol.1\' Compilation.',
+        'https://chipbangers.bandcamp.com/album/chip-bangers-friends-vol-1'
+        )"
+      >
+				<img src="img/single-heartbreakingnews.jpg" />
+      </div>
+      <div class="single-cover-mobile"
+      onclick="openPopup(
+        'img/single-regularpain.jpg',
+        'Regular Pain (2018)',
+        'This was originally released for BITGRID V compilation which was offered to people who attended BITGRID.',
+        'https://soundcloud.com/grizzly-cogs/regular-pain-bitgrid-v-compilation-entry'
+        )"
+      >
+				<img src="img/single-regularpain.jpg" />
+      </div>
+      <div class="single-cover-mobile"
+      onclick="openPopup(
+        'img/single-covfefe.jpg',
+        '\'Covfefe ! Covfefe !\' Say The Zombies (2018)',
+        'This is an edited version of Donald Trap OST. It is part of \'Chip Bit Day 18\' Compilation & \'Bleep Love Vol. 6\' Compilation.',
+        'https://bleeplove.bandcamp.com/album/bleeplove-volume-six'
+        )"
+      >
+				<img src="img/single-covfefe.jpg" />
+      </div>
+      <div class="single-cover-mobile"
+      onclick="openPopup(
+        'img/single-gcvslp.jpg',
+        'LePlancton VS Grizzly Cogs (2016)',
+        'This is a Split CD containing 6 tracks from LePlancton and 5 tracks from Grizzly Cogs.<br />Artwork by LePlancton.',
+        'https://leplanctonvsgrizzlycogs.bandcamp.com/releases'
+        )"
+      >
+				<img src="img/single-gcvslp.jpg">
+			</div>
+    </div>
+	</div>
+	
+	<!-- -->
+	<!-- GAME SOUNDTRACKS -->
+	<!-- -->
+	<div id="game-soundtracks" class="content-mobile">
+    <h1>🎮 Game Soundtracks</h1>
+    <div class="content-grid">
+      <div class="cover"
+      onclick="openPopup(
+        'img/game-ijustwanttosurvive.JPG',
+        'I just want to survive (2020)',
+        'This is a avoid/arcade game made by myself during the lockdown<br />I made programmation, game design, art, soundtracks and SFX for this game.',
+        'https://grizzlygames.bandcamp.com/album/i-just-want-to-survive',
+        'https://grizzly-games.itch.io/i-just-want-to-survive'
+        )"
+      >
+				<img src="img/game-ijustwanttosurvive.JPG" class="game"/>
+      </div>
+      <div class="cover"
+      onclick="openPopup(
+        'img/game-forestmaze.JPG',
+        'Forest Maze (2020)',
+        'This is a puzzle game made by myself during Ludum Dare #46<br />I made programmation, game design, art, soundtracks and SFX for this game.',
+        'https://grizzlygames.bandcamp.com/album/forest-maze',
+        'https://grizzly-games.itch.io/forest-maze'
+        )"
+      >
+				<img src="img/game-forestmaze.JPG" class="game" />
+      </div>
+      <div class="cover"
+      onclick="openPopup(
+        'img/game-vegaman.jpg',
+        'Vegaman (2019)',
+        'This is an arcade game made during Ankama Game Jam #2 by Thomas Baron, Sylvain Guerrero, Mojo, NoNameNoSocks and myself<br />I made Soundtracks and SFX for this game.',
+        'https://grizzlygames.bandcamp.com/album/vegaman',
+        'https://broken-arms.itch.io/vegaman'
+        )"
+      >
+				<img src="img/game-vegaman.jpg" class="game"/>
+      </div>
+      <div class="cover"
+      onclick="openPopup(
+        'img/game-boxingblob.jpg',
+        'Boxing Blob (2018)',
+        'This is an Android phone arcade game made by Turbo Yogurt<br />I made soundtracks and SFX for this game.',
+        'https://grizzlygames.bandcamp.com/album/boxing-blob',
+        'https://play.google.com/store/apps/details?id=com.AdriCorp.BoxingBlob'
+        )"
+      >
+				<img src="img/game-boxingblob.jpg" class="game" />
+      </div>
+      <div class="cover"
+      onclick="openPopup(
+        'img/game-californiajane.PNG',
+        'California Jane (2018)',
+        'This is a puzzle game made during Ludum Dare #42 Game Jam by Zylvaingue, Jean Werkling, Pauline Grassi, NoNameNoSocks and myself<br />Ended up 9th over 3065 games<br />I made soundtracks and SFX for this game.',
+        'https://grizzlygames.bandcamp.com/album/california-jane',
+        'https://fivenamefivesocks.itch.io/california-jane'
+        )"
+      >
+				<img src="img/game-californiajane.PNG" class="game" />
+      </div>
+      <div class="cover"
+      onclick="openPopup(
+        'img/game-darksoil.PNG',
+        'Dark Soil (2018)',
+        'This is a game made during Ludum Dare #41 Game Jam by Zylvaingue, Joachim Leclerc, Pietro Ferrantelli, NoNameNoSocks and myself<br />Ended up 1st over 3012 games<br />I made soundtracks and SFX for this game.',
+        'https://grizzlygames.bandcamp.com/album/dark-soil',
+        'https://pietro-ferrantelli.itch.io/dark-soil'
+        )"
+      >
+				<img src="img/game-darksoil.PNG" class="game" />
+      </div>
+      <div class="cover"
+      onclick="openPopup(
+        'img/game-donaldtrap.PNG',
+        'Donald Trap (2018)',
+        'This is an action game made during Ankama Game Jam #1 by Zylvaingue, Mojo, Thomas Baron, NoNameNoSocks and myself<br />I made soundtracks and SFX for this game.',
+        'https://grizzlygames.bandcamp.com/album/donald-trap',
+        'https://broken-arms.itch.io/donaldtrap'
+        )"
+      >
+				<img src="img/game-donaldtrap.PNG" class="game" />
+      </div>
+      <div class="cover"
+      onclick="openPopup(
+        'img/game-pingouingouin.PNG',
+        'Pingouingouin (2018)',
+        'This is a puzzle game made during Global Game Jam 2018 by Turbo Yogurt<br />I made soundtracks and SFX for this game.',
+        'https://grizzlygames.bandcamp.com/album/pingouingouin',
+        'https://play.google.com/store/apps/details?id=com.pasdideepasdecasquette.pinguoinguoin'
+        )"
+      >
+				<img src="img/game-pingouingouin.PNG" class="game" />
+      </div>
+      <div class="cover"
+      onclick="openPopup(
+        'img/game-gertrude.PNG',
+        'Gertrude (2017)',
+        'This is a puzzle game made during Nordic Game Jam 2017 by NoNameNoSocks and myself<br />I made soundtrack for this game.',
+        null,
+        'https://bwarembourg.github.io/gertrude/'
+        )"
+      >
+				<img src="img/game-gertrude.PNG" class="game" />
+			</div>
+    </div>
+	</div>
+	
+	<!-- -->
+	<!-- SHOWS -->
+	<!-- -->
+	<div id="shows" class="content-mobile">
+		<h1>📆 Past shows</h1>
+		<div class="show">
+			<img src="img/flag-pl.png" class="flag-mobile"> 2020-08-02 | Klub Stodola - Warsaw (PL)
+		</div>
+		<div class="show">
+			<img src="img/flag-pl.png" class="flag-mobile"> 2019-05-17 | Juwenalia PW Festival - Warsaw (PL)
+		</div>
+		<div class="show">
+			<img src="img/flag-fr.png" class="flag-mobile"> 2018-10-19 | La Rumeur, Lille (FR)
+		</div>
+		<div class="show">
+			<img src="img/flag-nl.png" class="flag-mobile"> 2018-05-17 | EINDBAAS - Utrecht (NL)
+		</div>
+		<div class="show">
+			<img src="img/flag-uk.png" class="flag-mobile"> 2018-04-28 | Chip Bit Day - Manchester (UK)
+		</div>
+		<div class="show">
+			<img src="img/flag-de.png" class="flag-mobile"> 2018-04-26 | A MAZE. - Berlin (DE)
+		</div>
+		<div class="show">
+			<img src="img/flag-be.png" class="flag-mobile"> 2018-04-21 | Bitgrid V - Antwerpen (BE)
+		</div>
+		<div class="show">
+			<img src="img/flag-fr.png" class="flag-mobile"> 2018-02-10 | Lokarria - Lille (FR)
+		</div>
+		<div class="show">
+			<img src="img/flag-fr.png" class="flag-mobile"> 2017-09-22 | Bobble Café - Lille (FR)
+		</div>
+		<div class="show">
+			<img src="img/flag-fr.png" class="flag-mobile"> 2017-09-07 | Le Modjo - Lille (FR)
+		</div>
+		<div class="show">
+			<img src="img/flag-fr.png" class="flag-mobile"> 2017-09-02 | Le rouge - Lille (FR)
+		</div>
+		<div class="show">
+			<img src="img/flag-be.png" class="flag-mobile"> 2017-05-17 | Pixelate - Antwerpen (BE)
+		</div>
+		<div class="show">
+			<img src="img/flag-fr.png" class="flag-mobile"> 2017-05-11 | Ankama Bar - Roubaix (FR)
+		</div>
+		<div class="show">
+			<img src="img/flag-de.png" class="flag-mobile"> 2016-04-27 | A MAZE. - Berlin (DE)
+		</div>
+		<div class="show">
+			<img src="img/flag-dk.png" class="flag-mobile"> 2017-04-20 | Nordic Game Jam - Copenhagen (DK)
+		</div>
+		<div class="show">
+			<img src="img/flag-fr.png" class="flag-mobile"> 2017-04-08 | Bobble Café - Lille (FR)
+		</div>
+		<div class="show">
+			<img src="img/flag-fr.png" class="flag-mobile"> 2017-03-03 | Caf&Diskaire (djset) - Lille (FR)
+		</div>
+		<div class="show">
+			<img src="img/flag-fr.png" class="flag-mobile"> 2017-02-18 | Aéronef - Lille (FR)
+		</div>
+		<div class="show">
+			<img src="img/flag-be.png" class="flag-mobile"> 2017-02-11 | Screenshake - Antwerpen (BE)
+		</div>		
+		<div class="show">
+			<img src="img/flag-fr.png" class="flag-mobile"> 2016-12-23 | El Diablo - Lille (FR)
+		</div>		
+		<div class="show">
+			<img src="img/flag-fr.png" class="flag-mobile"> 2016-11-30 | Cookie Demoparty - Paris (FR)
+		</div>
+		<div class="show">
+			<img src="img/flag-fr.png" class="flag-mobile"> 2016-11-12 | Zoo Machines Festival - Tourcoing (FR)
+		</div>		
+		<div class="show">
+			<img src="img/flag-fr.png" class="flag-mobile"> 2016-07-01 | Caf&Diskaire - Lille (FR)
+		</div>		
+		<div class="show">
+			<img src="img/flag-fr.png" class="flag-mobile"> 2016-06-25 | Gare St Sauveur - Lille (FR)
+		</div>		
+		<div class="show">
+			<img src="img/flag-fr.png" class="flag-mobile"> 2016-04-08 | Caf& Diskaire - Lille (FR)
+		</div>		
+		<div class="show">
+			<img src="img/flag-fr.png" class="flag-mobile"> 2016-01-29 | Caf&Diskaire - Lille (FR)
+		</div>		
+		<div class="show">
+			<img src="img/flag-fr.png" class="flag-mobile"> 2015-10-23 | Grand Palais - Lille (FR)
+		</div>
+		<div class="show">
+			<img src="img/flag-fr.png" class="flag-mobile"> 2015-09-25 | Le Duplex - Lille (FR)
+		</div>
+		<div class="show">
+			<img src="img/flag-fr.png" class="flag-mobile"> 2015-06-13 | Aéronef - Lille (FR)
+		</div>
+	</div>
+	
+	<div id="runrunjumppunch" class="content-mobile">
+		<h1>🎹 Run! Run! Jump! Punch!</h1>
+		<div class="show">
+			<div class="full-mobile">
+				<img src="img/rrjp.jpg" />
+				📷 <a href="https://loisedoyen.com/" target="_blank">Loïse Doyen</a>
+			</div>
+			<div class="hello-description">
+				<strong>Run! Run! Jump! Punch!</strong> is a Chiptune / Punk rock from Lille, France in which I play Synth, and drum-programming.
+				<br /><br />
+				Born from a collision between Punk-rock and lo-fi/chiptune electronic music, Run! Run! Jump! Punch! delivers happiness where soft synth melodies melt with catchy and energetic saturated guitars. Add a pinch of football-like chorus voices, and you will get all the ingredients of their music, to listen to on records or to sweat in live !
+				<br /><br />
+				<strong>Releases :</strong><br />
+				2020 | "Woof Woof" (EP, 9 tracks, Originally released on Cheapbeats records)<br />
+				2018 | "Run! Run! Jump! Punch!" (EP, 9 tracks, self-released)
+				<br /><br />
+				<strong><a href="https://runrunjumppunch.bandcamp.com" target="_blank">LISTEN</a></strong>
+			</div>
+		</div>
+	</div>
+	
+	<!-- <div id="contact" class="content-mobile contact-mobile">
+		<h1>🌠Contact</h1>
+		<div class="contact-div"><strong>Social : </strong><a href="https://www.facebook.com/GrizzlyCogs" target="_blank">Facebook</a> | <a href="https://www.twitter.com/GrizzlyCogs" target="_blank">Twitter</a> | <a href="https://www.instagram.com/grizzlycogs/">Instagram</a></div>
+		<div class="contact-div"><strong>Say hello, book me, hire me or whatever : <br /></strong>Email me at grizzlycogsmusic [at] gmail [dot] com</div>
+		<div class="contact-div"><h1>Credits :</h1></div>
+		<div class="contact-div"><strong>Website art : </strong><a href="https://twitter.com/NoNameNoSocks" target="_blank">NoNameNoSocks</a></div>
+		<div class="contact-div"><strong>Website design and code</strong> : Grizzly Cogs</div>
+  </div>
+   -->
+  <!-- POPUP -->
+  <div class="popup" id="popup">
+    <div class="close-popup" onclick="closePopup()">
+      <img src="img/close-icon.png">
+    </div>
+    <div class="popup-img">
+      <img id="img-popup" src="img/album-confettis.jpg">
+    </div>
+    <div><h1 id="title">CONFETTIS (2020)</h1></div>
+    <div>
+      <p id="description">
+      </p>
+    </div>
+    <div style="text-align:center;">
+      <p id="listen"><a id="listen-link" href="" target="_blank">🎧 LISTEN</a></p>
+      <p id="play"><a id="play-link" href="" target="_blank">🎮 PLAY</a></p>
+    </div>
+  </div>
+</body>
+
+</html>
