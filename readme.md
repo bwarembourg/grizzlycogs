@@ -7,6 +7,5 @@
 ## TO DO LIST
 - Make menu for mobile version
 - Make a better bio
-- Typos in RRJP
 - Add hyperlinks for listen links
 - lighter pictures
