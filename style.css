@@ -27,7 +27,6 @@ h2 {
 }
 
 .menu {
-	display: flex;
 	margin: 10px;
 	background-color: #CAE9E0;
 	text-align: center;
@@ -37,14 +36,6 @@ h2 {
 	top: 0px;
 }
 
-.img-menu {
-	width: 24px;
-	margin: -4px 5px 0 5px;
-}
-
-.img-menu img {
-	width: 100%;
-}
 
 .menu-pipe {
 	margin: 10px;
