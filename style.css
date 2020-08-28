@@ -294,6 +294,7 @@ h2 {
 	color: #6A7B76;
 	flex: 1;
 	text-align: right;
+	cursor: pointer;
 }
 
 hr {
