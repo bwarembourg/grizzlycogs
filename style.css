@@ -238,6 +238,7 @@ h2 {
 .close-popup-desktop {
 	right: 30%;
 	width: 2%;
+	cursor: pointer;
 }
 
 .close-popup img {
