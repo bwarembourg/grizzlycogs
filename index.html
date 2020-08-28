@@ -7,11 +7,24 @@
   <title>Grizzly Cogs</title>
   <meta name="description" content="Grizzly Cogs website">
   <meta name="author" content="Grizzly Cogs">
-  <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://kit.fontawesome.com/eb1bfc9e7d.js" crossorigin="anonymous"></script>
 	<script type="text/javascript">
 		if (screen.width <= 699) {
 			document.location = "mobile.html";
 		}
+
+		function openPopupNews(imgSrc, title, description, date) {
+      document.getElementById('popup-news').style.display = 'block';
+      document.getElementById('img-popup-news').src = imgSrc;
+      document.getElementById('title-news').innerHTML = title;
+      document.getElementById('description-news').innerHTML = description;
+      document.getElementById('date').innerHTML = date
+    }
+
+    function closePopupNews() {
+      document.getElementById('popup-news').style.display = 'none';
+    }
 		</script>
 </head>
 <body>
@@ -31,7 +44,52 @@
 		<span class="menu-pipe">|</span>
 		<a href="#contact">🌠 Contact</a>
 		<span class="menu-pipe">|</span>
+		<a href="http://grizzlycogs.bandcamp.com" target="_blank"><i class="fab fa-bandcamp icon"></i></a>
+		<a href="https://open.spotify.com/artist/6DYBO57C80qqR0VvCWLwCl?si=n13UY0f_T6OFQw-lRJm5Iw" target="_blank"><i class="fab fa-spotify icon"></i>
+		<a href="https://www.instagram.com/grizzlycogs/" target="_blank"><i class="fab fa-instagram icon"></i></a>
+		<a href="https://twitter.com/GrizzlyCogs" target="_blank"><i class="fab fa-twitter icon"></i></a>
+		<a href="https://www.facebook.com/GrizzlyCogs/" target="_blank"><i class="fab fa-facebook icon"></i></a>
 	</div>
+
+	<!-- -->
+  <!-- WHATSUPP -->
+  <!-- -->
+  <div id="hello" class="content content-news">
+		<h1>📰 What's up ?</h1>
+		<div class="news">
+      <div class="date">August 27</div>
+      <div class="news-info">New remix for Vault Kid ! </div>
+      <div class="readmore" onclick="openPopupNews(
+        'img/single-cloud10.jpg',
+        'New remix for Vault Kid !',
+        'Hey ! Hope you\'re doing ok !<br />My friend Vault Kid just released his brand new EP \'Where Are The Game Boys ?\'<br /><br />I have been a huge fan of his work, and this EP is a really great pick for every chiptune / trap / future bass music fan.<br />Plus, I am super honored to announce it features a remix from myself ! Go check it out 😄<br /><br /><a href=\'https://vaultkid.bandcamp.com/\' target=\'_blank\'>🎧 Listen to Vault Kid\'s New EP !</a>',
+        'August 27'
+        )">(read more ...)</div>
+		</div>
+		<hr />
+    <div class="news">
+      <div class="date">August 17</div>
+      <div class="news-info">I'm participating in Weekly Beats !</div>
+      <div class="readmore" onclick="openPopupNews(
+        'img/news-weeklybeats.png',
+        'I\'m participating in Weekly Beats !',
+        'Helloooo !<br />This year, I decided to participate in Weekly Beats.<br /><br />Weekly Beats is a project in which artists compose and release 1 song a week for the entire year. I though it would be interesting, so that it will allow me to experiment new genres 🙃<br />I am also making tiny pixel art animation for each track I make, so if you\'re curious about what I make each week, the best way to follow my weekly beats work is to <a href=\'https://www.instagram.com/grizzlycogs/\' target=\'_blank\'>follow me on instagram</a>',
+        'August 17'
+        )">(read more ...)</div>
+    </div>
+		<hr />
+		<div class="news">
+      <div class="date">June 5</div>
+      <div class="news-info">My new album Confettis is out !</div>
+      <div class="readmore" onclick="openPopupNews(
+        'img/album-confettis.jpg',
+        'My new album Confettis is out !',
+        'Hey ! I am super excited to announce that my new album \'Confettis\' is out now 🎉🎉<br /><br />It features 15 brand new tracks, including 4 remixes by great artists and friends such as TRIAC, Popsicle Theory, Dogsplusplus and Xyce !!!<br />It is available now on bandcamp and all music platforms, and on bandcamp you can also order physical version and goodies such as badges or posters !<br /><br /><a href=\'https://grizzlycogs.bandcamp.com/album/confettis\' target=\'_blank\'>Check it out 😀</a>',
+        'June 5'
+        )">(read more ...)</div>
+		</div>
+	</div>
+
 	<!-- -->
 	<!-- HELLO -->
 	<!-- -->
@@ -47,9 +105,7 @@
 				Sometimes it is chill, sometimes it is catchy, sometimes it is melancholic, but it is always about feelings and nostalgia.<br /><br />
 				I released 4 albums and some singles. I also made soundtracks for some web or mobile indie games. 
 				From time to time I like to play my music live. I travelled in 7 countries and play ~30 gigs.<br /><br />
-				Here is a website where you can find all my work. Have fun 😃<br /><br />
-				These days i am participating in Weekly Beats, the best way to follow this is <a href="" target="_blank">to follow me on instagram</a>
-				<br />You can also listen to the tracks i have made so far <a href="https://soundcloud.com/grizzly-cogs" target="_blank">here</a>.
+				Here is a website where you can find all my work. Have fun 😃
 			</div>
 		</div>
 	</div>
@@ -501,12 +557,34 @@
 	
 	<div id="contact" class="content">
 		<h1>🌠Contact</h1>
-		<div class="contact-div"><strong>Social : </strong><a href="https://www.facebook.com/GrizzlyCogs" target="_blank">Facebook</a> | <a href="https://www.twitter.com/GrizzlyCogs" target="_blank">Twitter</a> | <a href="https://www.instagram.com/grizzlycogs/">Instagram</a></div>
+		<div class="contact-div">
+			<strong>Social : </strong>
+			<a href="http://grizzlycogs.bandcamp.com" target="_blank"><i class="fab fa-bandcamp icon"></i></a>
+			<a href="https://open.spotify.com/artist/6DYBO57C80qqR0VvCWLwCl?si=n13UY0f_T6OFQw-lRJm5Iw" target="_blank"><i class="fab fa-spotify icon"></i>
+			<a href="https://www.instagram.com/grizzlycogs/" target="_blank"><i class="fab fa-instagram icon"></i></a>
+			<a href="https://twitter.com/GrizzlyCogs" target="_blank"><i class="fab fa-twitter icon"></i></a>
+			<a href="https://www.facebook.com/GrizzlyCogs/" target="_blank"><i class="fab fa-facebook icon"></i></a>
+		</div>
 		<div class="contact-div"><strong>Say hello, book me, hire me or whatever : </strong>Email me at grizzlycogsmusic [at] gmail [dot] com</div>
 		<div class="contact-div"><h1>Credits :</h1></div>
 		<div class="contact-div"><strong>Website art : </strong><a href="https://twitter.com/NoNameNoSocks" target="_blank">NoNameNoSocks</a></div>
 		<div class="contact-div"><strong>Website design and code</strong> : Grizzly Cogs</div>
 	</div>
+
+		<!-- POPUP NEWS -->
+		<div class="popup popup-desktop" id="popup-news">
+			<div class="close-popup close-popup-desktop" onclick="closePopupNews()">
+				<img src="img/close-icon.png">
+			</div>
+			<div><h1>📰 <span id="date" class="date"></span> <span id="title-news"></span></h1></div>
+			<div class="popup-img popup-img-desktop">
+				<img id="img-popup-news" src="img/album-confettis.jpg">
+			</div>
+			<div class="description-news description-news-desktop">
+				<p id="description-news">
+				</p>
+			</div>
+		</div>
 </body>
 
 </html>

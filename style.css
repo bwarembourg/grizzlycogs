@@ -27,13 +27,18 @@ h2 {
 }
 
 .menu {
-	margin: 10px;
+	margin: 10px 0;
 	background-color: #CAE9E0;
 	text-align: center;
 	padding: 10px;
 	position: -webkit-sticky;
 	position: sticky;
 	top: 0px;
+}
+
+.icon {
+	font-size: 1.4em;
+	margin: 0 5px;
 }
 
 
@@ -182,11 +187,21 @@ h2 {
 	padding: 5px;
 }
 
+.popup-desktop {
+	width: 40%;
+	left: 30%;
+}
+
 .close-popup {
 	position: fixed;
 	right: 11%;
 	top: 11%;
 	width: 5%;
+}
+
+.close-popup-desktop {
+	right: 30%;
+	width: 2%;
 }
 
 .close-popup img {
@@ -197,6 +212,11 @@ h2 {
 	width: 80%;
 	margin: 5% 10%;
 	text-align: center;
+}
+
+.popup-img-desktop {
+	width: 40%;
+	margin: 5% 30%;
 }
 
 .popup-img img {
@@ -214,4 +234,46 @@ h2 {
 
 .info {
 	font-size: 0.8em;
+}
+
+.content-news {
+	font-size: 0.8em;
+}
+
+.news {
+	display: flex;
+	font-size: 1.5em;
+}
+
+.date {
+	color: #F56476;
+	flex: 1;
+}
+
+.news-info {
+	flex: 4;
+}
+
+.readmore {
+	color: #6A7B76;
+	flex: 1;
+	text-align: right;
+}
+
+hr {
+	border: 0.5px dashed #6A7B76;
+}
+
+.description-news {
+	padding: 20px;
+	font-size: 1em;
+}
+
+.description-news-desktop {
+	padding: 0px;
+	font-size: 0.6em;
+}
+
+.description-news p {
+	text-align: justify;
 }
