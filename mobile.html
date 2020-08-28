@@ -44,6 +44,16 @@
     function closePopupNews() {
       document.getElementById('popup-news').style.display = 'none';
     }
+
+    function openMenu() {
+      document.getElementById('menu-button').style.display = 'none';
+      document.getElementById('menu').style.display = 'block';
+    }
+
+    function closeMenu() {
+      document.getElementById('menu-button').style.display = 'block';
+      document.getElementById('menu').style.display = 'none';
+    }
   </script>
 </head>
 <body>
@@ -51,7 +61,7 @@
   <!-- -->
   <!-- WHATSUPP -->
   <!-- -->
-  <div id="hello" class="content-mobile">
+  <div class="content-mobile">
 		<h1>📰 What's up ?</h1>
 		<div class="news">
       <div class="date">August 27</div>
@@ -553,6 +563,45 @@
     <div class="description-news">
       <p id="description-news">
       </p>
+    </div>
+  </div>
+  <div class="menu-button" id="menu-button" onclick="openMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+  <div class="menu" id="menu">
+    <div class="menu-item">
+      <strong>MENU</strong>
+    </div>
+    <div class="close-menu" onclick="closeMenu()">
+      <i class="fas fa-times"></i>
+    </div>
+    <div class="menu-item" onclick="closeMenu()">
+      <a href="#hello">🐻 Hello !</a>
+    </div>
+    <div class="menu-item" onclick="closeMenu()">
+      <a href="#releases">💿 Releases</a>
+    </div>
+    <div class="menu-item">
+      <a href="#game-soundtracks" onclick="closeMenu()">🎮 Game soundtracks</a>
+    </div>
+    <div class="menu-item" onclick="closeMenu()">
+      <a href="#shows">📆 Shows</a>
+    </div>
+    <div class="menu-item">
+      <a href="http://grizzlycogs.bandcamp.com" target="_blank" onclick="closeMenu()">🎧 Listen</a>
+    </div>
+    <div class="menu-item">
+      <a href="#runrunjumppunch" onclick="closeMenu()">🎹 Run! Run! Jump! Punch!</a>
+    </div>
+    <div class="menu-item">
+      <a href="#contact" onclick="closeMenu()">🌠 Contact</a>
+    </div>
+    <div class="menu-item" onclick="closeMenu()">
+      <a href="http://grizzlycogs.bandcamp.com" target="_blank"><i class="fab fa-bandcamp icon"></i></a>
+      <a href="https://open.spotify.com/artist/6DYBO57C80qqR0VvCWLwCl?si=n13UY0f_T6OFQw-lRJm5Iw" target="_blank"><i class="fab fa-spotify icon"></i>
+      <a href="https://www.instagram.com/grizzlycogs/" target="_blank"><i class="fab fa-instagram icon"></i></a>
+      <a href="https://twitter.com/GrizzlyCogs" target="_blank"><i class="fab fa-twitter icon"></i></a>
+      <a href="https://www.facebook.com/GrizzlyCogs/" target="_blank"><i class="fab fa-facebook icon"></i></a>
     </div>
   </div>
 

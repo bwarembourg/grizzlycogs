@@ -5,7 +5,4 @@
 - add it on the mobile, add a onclick function with info from desktop
 
 ## TO DO LIST
-- Make menu for mobile version
 - Make a better bio
-- Add hyperlinks for listen links
-- lighter pictures

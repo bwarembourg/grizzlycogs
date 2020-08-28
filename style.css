@@ -26,7 +26,7 @@ h2 {
 	text-align: center;
 }
 
-.menu {
+.menu-desktop {
 	margin: 10px 0;
 	background-color: #CAE9E0;
 	text-align: center;
@@ -185,6 +185,42 @@ h2 {
 	top: 10%;
 	width:80%;
 	padding: 5px;
+}
+
+.menu-button {
+	display: block;
+	position: fixed;
+	right: 5%;
+	top: 2%;
+	background-color: #CAE9E0;
+	padding: 20px;
+	border-radius: 10px;
+}
+
+.menu {
+	display: none;
+	position: fixed;
+	left: 30%;
+	top: 2%;
+	width: 70%;
+	background-color: rgba(255, 255, 255, 0.8);
+	font-size: 3em;
+}
+
+.menu-item {
+	text-align: center;
+	padding: 20px 0;
+}
+
+.menu-button i {
+	font-size: 3em;
+}
+
+.close-menu {
+	position: fixed;
+	right: 3%;
+	top: 4%;
+	width: 10%;
 }
 
 .popup-desktop {
