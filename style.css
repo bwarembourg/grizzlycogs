@@ -124,7 +124,7 @@ h2 {
 	padding: 5px;
 	width: 90%;
 	margin-left: 5%;
-	background-color: #CAE9E0;
+	background-color: #FFFFFFDD;
 	margin-top: 20px;
 }
 
@@ -314,4 +314,32 @@ hr {
 
 .description-news p {
 	text-align: justify;
+}
+
+.announce {
+	font-size: 0.8em;
+}
+
+.btn {
+	background-color: #CAE9E0;
+	width: 40%;
+	padding: 5px;
+	border-radius: 10px;
+	cursor: pointer;
+	margin: 5px;
+	font-size: 1em;
+}
+
+
+.btn a {
+	font-size: 2em;	
+}
+
+.btn:hover {
+	background-color: #915C64;
+	color: #CAE9E0;
+}
+
+.btn:hover a {
+	color: #CAE9E0;
 }

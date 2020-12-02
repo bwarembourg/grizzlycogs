@@ -1,0 +1,516 @@
+body {
+	margin: 0;
+	background-image: url("img/background.png");
+	font-family: Verdana;
+	color: #915C64;
+	font-size: 0.8em;
+
+}
+
+a {
+	color: #915C64;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+h1 {
+	color: #915C64;
+	font-size: 20px;
+}
+
+h2 {
+	font-size: 16px;
+}
+
+.header {
+	text-align: center;
+}
+
+.menu-desktop {
+	margin: 10px 0;
+	background-color: #FFFFFFCC;
+	text-align: center;
+	padding: 10px;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0px;
+	z-index: 100;
+}
+
+.icon {
+	font-size: 1.4em;
+	margin: 0 5px;
+}
+
+
+.menu-pipe {
+	margin: 10px;
+}
+
+.content {
+	padding: 5px;
+	width: 70%;
+	margin-left: 15%;
+	background-color: #FFFFFFDD;
+	margin-top: 20px;
+}
+
+.content-list {
+	margin: 10px;
+	display: flex;
+}
+
+.content-list-mobile {
+	margin: 10px;
+	display: flex;
+}
+
+.contact-div {
+	margin: 20px;
+}
+
+.single-cover {
+	flex: 1;
+}
+
+.single-cover img {
+	width: 100%
+}
+
+.single-description {
+	margin: 5px;
+	flex: 11;
+}
+
+.content-cover {
+	flex: 2;
+}
+
+.hello-cover {
+	flex: 5;
+}
+
+.hello-cover img {
+	width: 100%;
+}
+
+.hello-description {
+	margin: 5px; 
+	text-align: justify;
+	flex: 8;
+	line-height: 1.25;
+}
+
+.content-cover img {
+	width: 100%;
+}
+
+.content-description {
+	margin: 5px;
+	flex: 8;
+}
+
+.flag {
+	margin-right: 5px;
+	width: 20px;
+	height: 15px;
+}
+
+
+.full-mobile img {
+	width: 100%;
+}
+
+.content-mobile {
+	padding: 5px;
+	width: 90%;
+	margin-left: 5%;
+	background-color: #CAE9E0;
+	margin-top: 20px;
+}
+
+.hello-description-mobile {
+	margin: 5px; 
+	text-align: justify;
+}
+
+.content-grid {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.cover {
+	width: 46%;
+	margin: 2% 2%;
+}
+
+.single-cover-mobile {
+	width: 30%;
+	margin: 2% 0% 0% 2%;
+}
+
+.single-cover-mobile img {
+	width: 100%;
+}
+
+.cover img {
+	width: 100%;
+}
+
+
+.show {
+	font-size: 0.8em;
+	padding: 5px;
+}
+
+.flag-mobile {
+	margin-right: 5px;
+	width: 35px;
+	height: 30px;
+}
+
+.contact-mobile {
+	font-size: 0.8em;
+}
+
+.popup {
+	display: none;
+	position: fixed;
+	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+	background-color: white;
+	border-radius: 10px;
+	left: 10%;
+	top: 10%;
+	width:80%;
+	padding: 5px;
+}
+
+.menu-button {
+	display: block;
+	position: fixed;
+	right: 5%;
+	top: 2%;
+	background-color: #CAE9E0;
+	padding: 20px;
+	border-radius: 10px;
+}
+
+.menu {
+	display: none;
+	position: fixed;
+	left: 30%;
+	top: 2%;
+	width: 70%;
+	background-color: rgba(255, 255, 255, 0.8);
+	font-size: 3em;
+}
+
+.menu-item {
+	text-align: center;
+	padding: 20px 0;
+}
+
+.menu-button i {
+	font-size: 3em;
+}
+
+.close-menu {
+	position: fixed;
+	right: 3%;
+	top: 4%;
+	width: 10%;
+}
+
+.popup-desktop {
+	width: 40%;
+	left: 30%;
+}
+
+.close-popup {
+	position: fixed;
+	right: 11%;
+	top: 11%;
+	width: 5%;
+}
+
+.close-popup-desktop {
+	right: 30%;
+	width: 2%;
+	cursor: pointer;
+}
+
+.close-popup img {
+	width: 100%;
+}
+
+.popup-img {
+	width: 80%;
+	margin: 5% 10%;
+	text-align: center;
+}
+
+.popup-img-desktop {
+	width: 40%;
+	margin: 5% 30%;
+}
+
+.popup-img img {
+	width: 100%;
+}
+
+.popup h1 {
+	font-size: 2em;
+	text-align: center;
+}
+
+.popup p {
+	font-size: 2em;
+}
+
+.info {
+	font-size: 0.8em;
+}
+
+.content-news {
+	font-size: 0.8em;
+}
+
+.news {
+	display: flex;
+	font-size: 1.5em;
+}
+
+.date {
+	color: #FDB81E;
+	flex: 1;
+}
+
+.news-info {
+	flex: 4;
+}
+
+.readmore {
+	color: #6A7B76;
+	flex: 1;
+	text-align: right;
+	cursor: pointer;
+}
+
+hr {
+	border: 0.5px dashed #6A7B76;
+}
+
+.description-news {
+	padding: 20px;
+	font-size: 1em;
+}
+
+.description-news-desktop {
+	padding: 0px;
+	font-size: 0.6em;
+}
+
+.description-news p {
+	text-align: justify;
+}
+
+.v2-album-cover {
+	padding: 5px;
+	position: relative;
+}
+
+.v2-album-cover img {
+	width: 300px;
+}
+
+.single img {
+	width: 200px;
+}
+
+.game img {
+	height: 200px;
+}
+
+.rrjp img {
+	width: 200px;
+}
+
+.v2-album-container {
+	width: 96%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	margin: 0 auto;
+}
+
+.item-info {
+	color: white;
+	background-color: black;
+	opacity: 0;
+	position: absolute;
+	left: 0;
+	text-align: left;
+	margin: 5px;
+	bottom: 0px;
+	width: 290px;
+	height: 60%;
+	padding: 5px;
+}
+
+.info-single {
+	height: 195px;
+	width: 190px;
+}
+
+.info-game {
+	height: 80%;
+}
+
+.info-rrjp {
+	height: 195px;
+	width: 190px;
+}
+
+.item-info a {
+	color: #FDB81E;
+}
+
+.v2-cover {
+	width: 100%;
+}
+
+.v2-cover:hover + div {
+	opacity: 0.9;
+	transition:opacity 0.5s;
+}
+
+.item-info:hover {
+	opacity: 0.9;
+	transition:opacity 0.5s;
+}
+
+.mini-player {
+	position: absolute;
+	width: 33%;
+	left: 33%;
+	top: 40%;
+	text-align: center;
+	font-size: 3em;
+}
+
+.mini-player a {
+	color: white;
+	cursor: pointer;
+}
+
+.player {
+	background-color: #CAE9E0;
+	width: 60%;
+	padding: 5px;
+	margin: 5px;
+	border-radius: 10px;
+	display: flex;
+	position: relative;
+}
+
+.player .btn {
+	flex: 1;
+	background-color: #FFFFFFBB;
+	margin: 5px;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+.player .btn:hover {
+	cursor: pointer;
+}
+
+.player .player-info {
+	flex: 8;
+	background-color: #FFFFFFBB;
+	margin: 5px;
+	padding: 5px;
+	border-radius: 5px;
+	text-align: left;
+	text-overflow: ellipsis;
+	overflow:hidden;
+	white-space:nowrap
+}
+
+.playlist {
+	background-color: #CAE9E0;
+	margin: 5px;
+	padding: 5px;
+	width: 60%;
+	border-radius: 5px;
+	width: 30%;
+	position: absolute;
+	z-index: 100;
+	right: -5px;
+	top: 35px;
+	height: 150px;
+	overflow-y: scroll;
+}
+
+.track {
+	display: flex;
+	cursor: pointer;
+}
+
+.track .trackno {
+	flex: 1;
+	margin: 5px;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+.track .trackname {
+	flex: 8;
+	margin: 5px;
+	padding: 5px;
+	border-radius: 5px;
+	text-align: left;
+	text-overflow: ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
+}
+
+.not-playing {
+	background-color: #FFFFFFBB;
+}
+
+.playing {
+	background-color: #FFFFFFBB;
+	color: #A27D7C;
+}
+
+.weekly-infos {
+	width: 60%;
+	text-align: justify;
+}
+
+.weekly-announce {
+	text-align: center;
+	width: 40%;
+	background-color: #FDB81E;
+	padding: 5px;
+	border-radius: 15px;
+}
+
+.btn {
+	background-color: #CAE9E0;
+	width: 30%;
+	padding: 5px;
+	border-radius: 10px;
+	cursor: pointer;
+	margin: 5px;
+}
+
+.btn:hover {
+	background-color: #915C64;
+	color: #CAE9E0;
+}
+
+.btn:hover a {
+	color: #CAE9E0;
+}

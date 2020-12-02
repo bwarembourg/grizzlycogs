@@ -1,0 +1,486 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Grizzly Cogs - Weekly Beats 2020-2021</title>
+  <meta name="description" content="Grizzly Cogs website">
+  <meta name="author" content="Grizzly Cogs">
+	<link rel="stylesheet" href="style2.css">
+	<link rel="icon" type="image/jpeg" href="img/icon.jpg" />
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-176740175-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-176740175-1');
+	</script>
+	<script src="https://kit.fontawesome.com/eb1bfc9e7d.js" crossorigin="anonymous"></script>
+	<script>
+		var tracks = [
+			'01. hello',
+			'02. adventure awaits',
+			'03. one step at a time',
+			'04. a lonely bike trip at night',
+			'05. koala',
+			'06. a love crush and a friend at once',
+			'07. monster in the closet',
+			'08. the shed',
+			'09. astronaut blues',
+			'10. wakey wakey',
+			'11. We are going nowhere and that\'s fine',
+			'12. planet heartbeat',
+			'13. ice cream 4eva',
+			'14. piou piou',
+			'15. happy earthquake',
+			'16. moo moo',
+			'17. burger assembly',
+			'18. childhood',
+			'19. mission complete',
+			'20. Wonders',
+			'21. First walk on the ice floe',
+			'22. dreams flavored soda',
+			'23. Mountain memories',
+			'24. bees in love',
+			'25. A walk at the park',
+		];
+
+		var audio;
+		var idPlaying = 1;
+		var playlistShown = false;
+		function play(id){
+			document.getElementById('play' + id).style.display= 'none';
+			document.getElementById('pause' + id).style.display= 'block';
+			document.getElementById('globalPlay').style.display = 'none';
+			document.getElementById('globalPause').style.display = 'block';
+			if (audio) {
+				pause(idPlaying);
+			}
+			document.getElementById('globalPlay').style.display = 'none';
+			document.getElementById('globalPause').style.display = 'block';
+			src = 'audio/' + tracks[id - 1] + '.mp3';
+			document.getElementById('nowplaying').innerText = src.split('/')[1].split('.mp3')[0];
+			idPlaying = id;
+			audio = new Audio(src);
+			audio.play();
+			audio.onended = function () {
+				next();
+			}
+			refreshPlaylist();
+		}
+
+		function pause(id) {
+			document.getElementById('globalPlay').style.display = 'block';
+			document.getElementById('globalPause').style.display = 'none';
+			document.getElementById('nowplaying').innerText = '-';
+			document.getElementById('play' + id).style.display= 'block';
+			document.getElementById('pause' + id).style.display= 'none';
+			audio.pause();
+		}
+
+		function globalPlay() {
+			play(idPlaying);
+		}
+
+		function globalStop() {
+			pause(idPlaying);
+			idPlaying = 1;
+		}
+
+		function globalPause() {
+			pause(idPlaying);
+		}
+
+		function next() {
+			if (audio) {
+				pause(idPlaying);
+			}
+			idPlaying++;
+			if(idPlaying > tracks.length) {
+				idPlaying = 1;
+			}
+			play(idPlaying);
+		}
+
+		function previous() {
+			if (audio) {
+				pause(idPlaying);
+			}
+			idPlaying--;
+			if (idPlaying <= 0) {
+				idPlaying = tracks.length;
+			}	
+			play(idPlaying);
+		}
+
+		function mute(muted) {
+			if (!audio) {
+				audio = new Audio();
+			}
+			audio.muted = muted;
+			document.getElementById('mute').style.display = muted ? 'none' : 'block'
+			document.getElementById('unmute').style.display = muted ? 'block' : 'none';
+		}
+
+		function showPlaylist() {
+			playlistShown = !playlistShown;
+			var playlist = document.getElementById('playlist');
+			playlist.style.display = playlistShown ? 'block' : 'none';
+			refreshPlaylist();
+		}
+
+		function refreshPlaylist() {
+			var playlist = document.getElementById('playlist');
+			playlist.innerHTML = '';
+			for(var i= 0; i< tracks.length; i++) {
+				var trackNo = tracks[i].split('.')[0];
+				var trackName = tracks[i].split('.')[1];
+				var playing = ' not-playing';
+				if (idPlaying - 1 == i) {
+					trackNo = '<i class="fas fa-play"></i>'
+					playing = ' playing';
+				}
+				var idToPlay = i + 1;
+				playlist.innerHTML += '<div class="track" onclick="play(' + idToPlay + ')"><div class="trackno'+ playing + '">' + trackNo + '</div><div class="trackname' + playing + '">' + trackName + '</div></div>';
+			}
+		}
+
+	</script>
+</head>
+<body>
+	<div class="header" id="home"><img src="img/header.png" /></div>
+	<div id="releases" class="content">
+		<center><h1>🎵 Weekly Beats 2020 - 2021</h1></center>
+		<center>
+			<div class="weekly-infos">
+				<p>
+					Weekly Beats is a 52 weeks challenge in which everyone has to make a beat or a song every week. 
+					I took part to the challenge in mid-june 2020 and plan to write 52 tracks till june 2021. 
+					You can get more information on the <a href="https://weeklybeats.com/" target="_blank"> Weekly Beats official website.</a><br />
+					Use the music player or click on the small animation to listen to the songs I made so far during this challenge :).
+				</p>
+			</div>
+		</center>
+		<!-- PLAYER -->
+		<center>
+			<div class="player">
+				<div class="btn" onclick="previous()">
+					<strong><i class="fas fa-step-backward"></i></strong>
+				</div>
+				<div class="btn" onclick="globalStop()">
+					<strong><i class="fas fa-stop"></i></strong>
+				</div>
+				<div class="btn" onclick="globalPlay()" id="globalPlay">
+					<strong><i class="fas fa-play"></i></strong>
+				</div>
+				<div class="btn" onclick="globalPause()" id="globalPause" style="display:none;">
+					<strong><i class="fas fa-pause"></i></strong>
+				</div>
+				<div class="btn" onclick="next()">
+					<strong><i class="fas fa-step-forward"></i></strong>
+				</div>
+				<div class="player-info">
+					<strong>Now playing : <span id="nowplaying">-</span></strong>
+				</div>
+				<div class="btn" onclick="mute(true)" id="mute">
+					<strong><i class="fas fa-volume-up"></i></strong>
+				</div>
+				<div class="btn" onclick="mute(false)" id="unmute" style="display:none;">
+					<strong><i class="fas fa-volume-mute"></i></strong>
+				</div>
+				<div class="btn" onclick="showPlaylist()">
+					<strong><i class="fas fa-stream"></i></strong>
+				</div>
+				<div id="playlist" class="playlist" style="display: none;" >
+
+				</div>
+			</div>
+		</center>
+
+
+
+
+		<div class="v2-album-container">
+			<div class="v2-album-cover single">
+				<div class="v2-cover"><img src="https://piskel-imgstore-b.appspot.com/img/e91ab5d9-3170-11eb-aeb0-51e3ca19ba4c.gif" /></div>
+				<div class="item-info info-single">
+					<center><strong>A Walk in the park</strong></center><br /><br />
+					<div class="mini-player">
+						<a id="play25" onclick="play(25)"><i class="fas fa-play"></i></a>
+						<a id="pause25" style="display:none;" onclick="pause(25)"><i class="fas fa-pause"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="v2-album-cover single">
+				<div class="v2-cover"><img src="https://piskel-imgstore-b.appspot.com/img/926a281e-2d64-11eb-96eb-3bea567f301f.gif" /></div>
+				<div class="item-info info-single">
+					<center><strong>Bees in love</strong></center><br /><br />
+					<div class="mini-player">
+						<a id="play24" onclick="play(24)"><i class="fas fa-play"></i></a>
+						<a id="pause24" style="display:none;" onclick="pause(24)"><i class="fas fa-pause"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="v2-album-cover single">
+				<div class="v2-cover"><img src="https://piskel-imgstore-b.appspot.com/img/b885fd21-2717-11eb-a38e-a1460e317078.gif" /></div>
+				<div class="item-info info-single">
+					<center><strong>Mountain memories</strong></center><br /><br />
+					<div class="mini-player">
+						<a id="play23" onclick="play(23)"><i class="fas fa-play"></i></a>
+						<a id="pause23" style="display:none;" onclick="pause(23)"><i class="fas fa-pause"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="v2-album-cover single">
+				<div class="v2-cover"><img src="https://piskel-imgstore-b.appspot.com/img/390b669e-2103-11eb-b936-7945d8b187a7.gif" /></div>
+				<div class="item-info info-single">
+					<center><strong>Dreams flavored soda</strong></center><br /><br />
+					<div class="mini-player">
+						<a id="play22" onclick="play(22)"><i class="fas fa-play"></i></a>
+						<a id="pause22" style="display:none;" onclick="pause(22)"><i class="fas fa-pause"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="v2-album-cover single">
+				<div class="v2-cover"><img src="https://i.ibb.co/1XsYK4h/21-First-walk-on-the-ice-floe.gif" /></div>
+				<div class="item-info info-single">
+					<center><strong>First walk on the ice floe</strong></center><br /><br />
+					<div class="mini-player">
+						<a id="play21" onclick="play(21)"><i class="fas fa-play"></i></a>
+						<a id="pause21" style="display:none;" onclick="pause(21)"><i class="fas fa-pause"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="v2-album-cover single">
+				<div class="v2-cover"><img src="https://piskel-imgstore-b.appspot.com/img/ee9d025e-1514-11eb-8b47-57faccb9f436.gif" /></div>
+				<div class="item-info info-single">
+					<center><strong>Wonders</strong></center><br /><br />
+					<div class="mini-player">
+						<a id="play20" onclick="play(20)"><i class="fas fa-play"></i></a>
+						<a id="pause20" style="display:none;" onclick="pause(20)"><i class="fas fa-pause"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="v2-album-cover single">
+				<div class="v2-cover"><img src="https://piskel-imgstore-b.appspot.com/img/bade07ae-0fb7-11eb-abde-1f73b8c0671d.gif" /></div>
+				<div class="item-info info-single">
+					<center><strong>Mission complete</strong></center><br /><br />
+					<div class="mini-player">
+						<a id="play19" onclick="play(19)"><i class="fas fa-play"></i></a>
+						<a id="pause19" style="display:none;" onclick="pause(19)"><i class="fas fa-pause"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="v2-album-cover single">
+				<div class="v2-cover"><img src="https://piskel-imgstore-b.appspot.com/img/e8a65066-3493-11eb-8940-23c6b11a7c70.gif" /></div>
+				<div class="item-info info-single">
+					<center><strong>Childhood</strong></center><br /><br />
+					<div class="mini-player">
+						<a id="play18" onclick="play(18)"><i class="fas fa-play"></i></a>
+						<a id="pause18" style="display:none;" onclick="pause(18)"><i class="fas fa-pause"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="v2-album-cover single">
+				<div class="v2-cover"><img src="https://piskel-imgstore-b.appspot.com/img/b839d123-0553-11eb-ae72-d13dca707ba4.gif" /></div>
+				<div class="item-info info-single">
+					<center><strong>Burger assembly</strong></center><br /><br />
+					<div class="mini-player">
+						<a id="play17" onclick="play(17)"><i class="fas fa-play"></i></a>
+						<a id="pause17" style="display:none;" onclick="pause(17)"><i class="fas fa-pause"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="v2-album-cover single">
+				<div class="v2-cover"><img src="https://piskel-imgstore-b.appspot.com/img/d8e6c46b-00a1-11eb-a582-7d33cbea2e54.gif" /></div>
+				<div class="item-info info-single">
+					<center><strong>Moo moo</strong></center><br /><br />
+					<div class="mini-player">
+						<a id="play16" onclick="play(16)"><i class="fas fa-play"></i></a>
+						<a id="pause16" style="display:none;" onclick="pause(16)"><i class="fas fa-pause"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="v2-album-cover single">
+				<div class="v2-cover"><img src="https://piskel-imgstore-b.appspot.com/img/5d3a40f8-f999-11ea-96b8-e93c53f28304.gif" /></div>
+				<div class="item-info info-single">
+					<center><strong>Happy earthquake</strong></center><br /><br />
+					<div class="mini-player">
+						<a id="play15" onclick="play(15)"><i class="fas fa-play"></i></a>
+						<a id="pause15" style="display:none;" onclick="pause(15)"><i class="fas fa-pause"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="v2-album-cover single">
+				<div class="v2-cover"><img src="https://piskel-imgstore-b.appspot.com/img/52b0ec99-f5a2-11ea-aea0-3b403b380393.gif" /></div>
+				<div class="item-info info-single">
+					<center><strong>Piou piou</strong></center><br /><br />
+					<div class="mini-player">
+						<a id="play14" onclick="play(14)"><i class="fas fa-play"></i></a>
+						<a id="pause14" style="display:none;" onclick="pause(14)"><i class="fas fa-pause"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="v2-album-cover single">
+				<div class="v2-cover"><img src="https://piskel-imgstore-b.appspot.com/img/12b06105-ef86-11ea-a254-0394c7df467f.gif" /></div>
+				<div class="item-info info-single">
+					<center><strong>Ice cream 4eva</strong></center><br /><br />
+					<div class="mini-player">
+						<a id="play13" onclick="play(13)"><i class="fas fa-play"></i></a>
+						<a id="pause13" style="display:none;" onclick="pause(13)"><i class="fas fa-pause"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="v2-album-cover single">
+				<div class="v2-cover"><img src="https://piskel-imgstore-b.appspot.com/img/a79a28d4-e9e8-11ea-a4fa-3d7e5e9a5933.gif" /></div>
+				<div class="item-info info-single">
+					<center><strong>Planet Heartbeat</strong></center><br /><br />
+					<div class="mini-player">
+						<a id="play12" onclick="play(12)"><i class="fas fa-play"></i></a>
+						<a id="pause12" style="display:none;" onclick="pause(12)"><i class="fas fa-pause"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="v2-album-cover single">
+				<div class="v2-cover"><img src="https://piskel-imgstore-b.appspot.com/img/7fb9bda3-e491-11ea-9ea1-e330552e7cb6.gif" /></div>
+				<div class="item-info info-single">
+					<center><strong>We are going nowhere and that's fine</strong></center><br /><br />
+					<div class="mini-player">
+						<a id="play11" onclick="play(11)"><i class="fas fa-play"></i></a>
+						<a id="pause11" style="display:none;" onclick="pause(11)"><i class="fas fa-pause"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="v2-album-cover single">
+				<div class="v2-cover"><img src="https://piskel-imgstore-b.appspot.com/img/733d0100-3496-11eb-9bc4-23c6b11a7c70.gif" /></div>
+				<div class="item-info info-single">
+					<center><strong>Wakey wakey</strong></center><br /><br />
+					<div class="mini-player">
+						<a id="play10" onclick="play(10)"><i class="fas fa-play"></i></a>
+						<a id="pause10" style="display:none;" onclick="pause(10)"><i class="fas fa-pause"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="v2-album-cover single">
+				<div class="v2-cover"><img src="https://piskel-imgstore-b.appspot.com/img/ab58da3a-3496-11eb-b94f-23c6b11a7c70.gif" /></div>
+				<div class="item-info info-single">
+					<center><strong>Astronaut blues</strong></center><br /><br />
+					<div class="mini-player">
+						<a id="play9" onclick="play(9)"><i class="fas fa-play"></i></a>
+						<a id="pause9" style="display:none;" onclick="pause(9)"><i class="fas fa-pause"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="v2-album-cover single">
+				<div class="v2-cover"><img src="https://piskel-imgstore-b.appspot.com/img/ff9cd223-3496-11eb-ad12-23c6b11a7c70.gif" /></div>
+				<div class="item-info info-single">
+					<center><strong>The shed</strong></center><br /><br />
+					<div class="mini-player">
+						<a id="play8" onclick="play(8)"><i class="fas fa-play"></i></a>
+						<a id="pause8" style="display:none;" onclick="pause(8)"><i class="fas fa-pause"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="v2-album-cover single">
+				<div class="v2-cover"><img src="https://piskel-imgstore-b.appspot.com/img/3e5cb163-3497-11eb-8ef0-23c6b11a7c70.gif" /></div>
+				<div class="item-info info-single">
+					<center><strong>Monster in the closet</strong></center><br /><br />
+					<div class="mini-player">
+						<a id="play7" onclick="play(7)"><i class="fas fa-play"></i></a>
+						<a id="pause7" style="display:none;" onclick="pause(7)"><i class="fas fa-pause"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="v2-album-cover single">
+				<div class="v2-cover"><img src="https://piskel-imgstore-b.appspot.com/img/7900ac23-3497-11eb-bef2-23c6b11a7c70.gif" /></div>
+				<div class="item-info info-single">
+					<center><strong>A love crush and a friend at once</strong></center><br /><br />
+					<div class="mini-player">
+						<a id="play6" onclick="play(6)"><i class="fas fa-play"></i></a>
+						<a id="pause6" style="display:none;" onclick="pause(6)"><i class="fas fa-pause"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="v2-album-cover single">
+				<div class="v2-cover"><img src="https://piskel-imgstore-b.appspot.com/img/b3e5c087-3497-11eb-a83e-23c6b11a7c70.gif" /></div>
+				<div class="item-info info-single">
+					<center><strong>Koala</strong></center><br /><br />
+					<div class="mini-player">
+						<a id="play5" onclick="play(5)"><i class="fas fa-play"></i></a>
+						<a id="pause5" style="display:none;" onclick="pause(5)"><i class="fas fa-pause"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="v2-album-cover single">
+				<div class="v2-cover"><img src="https://piskel-imgstore-b.appspot.com/img/25a13e00-3498-11eb-8af3-23c6b11a7c70.gif" /></div>
+				<div class="item-info info-single">
+					<center><strong>A lonely bike trip at night</strong></center><br /><br />
+					<div class="mini-player">
+						<a id="play4" onclick="play(4)"><i class="fas fa-play"></i></a>
+						<a id="pause4" style="display:none;" onclick="pause(4)"><i class="fas fa-pause"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="v2-album-cover single">
+				<div class="v2-cover"><img src="https://piskel-imgstore-b.appspot.com/img/3ea56e1c-3498-11eb-8ada-23c6b11a7c70.gif" /></div>
+				<div class="item-info info-single">
+					<center><strong>One step at a time</strong></center><br /><br />
+					<div class="mini-player">
+						<a id="play3" onclick="play(3)"><i class="fas fa-play"></i></a>
+						<a id="pause3" style="display:none;" onclick="pause(3)"><i class="fas fa-pause"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="v2-album-cover single">
+				<div class="v2-cover"><img src="https://piskel-imgstore-b.appspot.com/img/6675f66e-3498-11eb-a47a-23c6b11a7c70.gif" /></div>
+				<div class="item-info info-single">
+					<center><strong>Adventure awaits</strong></center><br /><br />
+					<div class="mini-player">
+						<a id="play2" onclick="play(2)"><i class="fas fa-play"></i></a>
+						<a id="pause2" style="display:none;" onclick="pause(2)"><i class="fas fa-pause"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="v2-album-cover single">
+				<div class="v2-cover"><img src="https://piskel-imgstore-b.appspot.com/img/9516737a-3498-11eb-b04b-23c6b11a7c70.gif" /></div>
+				<div class="item-info info-single">
+					<center><strong>Hello</strong></center><br /><br />
+					<div class="mini-player">
+						<a id="play1" onclick="play(1)"><i class="fas fa-play"></i></a>
+						<a id="pause1" style="display:none;" onclick="pause(1)"><i class="fas fa-pause"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</body>
+
+</html>
