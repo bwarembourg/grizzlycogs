@@ -145,3 +145,12 @@ function refreshPlaylist() {
     playlist.innerHTML += '<div class="track" onclick="play(' + idToPlay + ')"><div class="trackno'+ playing + '">' + trackNo + '</div><div class="trackname' + playing + '">' + trackName + '</div></div>';
   }
 }
+
+function mute(muted) {
+  if (!audio) {
+    audio = new Audio();
+  }
+  audio.muted = muted;
+  document.getElementById('mute').style.display = muted ? 'none' : 'block'
+  document.getElementById('unmute').style.display = muted ? 'block' : 'none';
+}
