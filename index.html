@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="style2.css">
 	<link rel="icon" type="image/jpeg" href="img/icon.jpg" />
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-176740175-1"></script>
+	<script src="miniplayer.js"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
@@ -58,6 +59,45 @@
 		<a href="https://www.facebook.com/GrizzlyCogs/" target="_blank"><i class="fab fa-facebook icon"></i></a>
 	</div>
 
+	<div class="miniplayer" id="miniplayer">
+			<div class="btn" onclick="previous()">
+				<strong><i class="fas fa-step-backward"></i></strong>
+			</div>
+			<div class="btn" onclick="globalStop()">
+				<strong><i class="fas fa-stop"></i></strong>
+			</div>
+			<div class="btn" onclick="globalPlay()" id="globalPlay">
+				<strong><i class="fas fa-play"></i></strong>
+			</div>
+			<div class="btn" onclick="globalPause()" id="globalPause" style="display:none;">
+				<strong><i class="fas fa-pause"></i></strong>
+			</div>
+			<div class="btn" onclick="next()">
+				<strong><i class="fas fa-step-forward"></i></strong>
+			</div>
+			<div class="player-info">
+				<strong><span id="nowplaying">-----</span></strong>
+			</div>
+			<div class="btn" onclick="mute(true)" id="mute">
+				<strong><i class="fas fa-volume-up"></i></strong>
+			</div>
+			<div class="btn" onclick="mute(false)" id="unmute" style="display:none;">
+				<strong><i class="fas fa-volume-mute"></i></strong>
+			</div>
+			<div class="btn" onclick="showPlaylist()">
+				<strong><i class="fas fa-stream"></i></strong>
+			</div>
+	</div>
+	<div id="globalPlaylist" class="miniplayer-playlist" style="display: none; width: 400px;" >
+		<div id="playlist-cover" class="miniplayer-cover">
+			<img id="albumart" src="img/album-confettis.jpg"><br />
+			<span id="albumname">Confettis (2020)</span>
+		</div>
+		<div id="playlist" class="miniplayer-tracks-playlist">
+			
+		</div>
+	</div>
+
 	<!-- -->
   <!-- WHATSUPP -->
 	<!-- -->
@@ -80,13 +120,24 @@
   <div id="whatsupp" class="content content-news">
 		<h1>📰 What's up ?</h1>
 		<div class="news">
+      <div class="date">December 4</div>
+      <div class="news-info">New track for RESTORE compilation !</div>
+      <div class="readmore" onclick="openPopupNews(
+        'img/single-oceansecrets.jpg',
+        'New track for RESTORE compilation ! ',
+        'I have written a new post-rock chiptune track called \'Ocean Secrets\', for the RESTORE compilation, which also features a lot of great artists such as (T-T)b, 3xBlast, ThronoCrigger, Hexosphere...<br /><br /> All proceeds will go to benefit <a href=\'https://www.ehlers-danlos.com/what-is-eds/\'>The Ehlers Danlos Society</a> via <a href=\'https://thevedsmovement.org/\'>The VEDS Movement</a><br /><br /><a href=\'https://continuecomp.bandcamp.com/\' target=\'_blank\'>🎧 Listen to the whole compilation</a>',
+        'December 4'
+        )">(read more ...)</div>
+		</div>
+		<hr />
+		<div class="news">
       <div class="date">September 4</div>
       <div class="news-info">New arcade / cooking game : "Ice Cream 4ever" ! </div>
       <div class="readmore" onclick="openPopupNews(
         'img/game-icecream4ever.png',
         'New arcade / cooking game : \'Ice Cream 4ever\' ! ',
         'Hey ! I made a game for the Game Boy Jam #8 !<br /><br />It is a cooking / arcade game in which you have to prepare ice cream cones to customers, I made it in one week, and I am pretty happy with the result !<br />Check it out : <br/><br/><a href=\'https://grizzly-games.itch.io/ice-cream-4ever\' target=\'_blank\'>🎮 Play the game (web)</a><br /><br /><a href=\'https://grizzlygames.bandcamp.com/album/ice-cream-4ever\' target=\'_blank\'>🎧 Listen to the original soundtrack</a>',
-        'August 27'
+        'September 4'
         )">(read more ...)</div>
 		</div>
 		<hr />
@@ -139,7 +190,9 @@
 						<br /><br />
 						Self released.
 						<br /><br />
-						<a href="https://grizzlycogs.bandcamp.com/album/confettis" target="_blank">🎧 LISTEN</a>
+						<a onclick="showLoadAndPlay('confettis')">🎧 Listen</a>
+						 | <i class="fab fa-bandcamp icon"></i><a href="http://grizzlycogs.bandcamp.com/album/confettis" target="_blank">Bandcamp</a>
+						 | <i class="fab fa-spotify icon"></i><a href="https://open.spotify.com/album/0ZPSH20EYQZ1LGvXpBx0um?si=Z8vGZkGRShmigrP9VCEbLQ" target="_blank">Spotify</a>
 					</div>
 				</div>
 				<div class="v2-album-cover">
@@ -153,7 +206,9 @@
 						<br /><br />
 						Originally released on Cheapbeats Records.
 						<br /><br />
-						<a href="https://grizzlycogs.bandcamp.com/album/deltaplane" target="_blank">🎧 LISTEN</a>
+						<a onclick="showLoadAndPlay('deltaplane')">🎧 Listen</a>
+						| <i class="fab fa-bandcamp icon"></i><a href="http://grizzlycogs.bandcamp.com/album/deltaplane" target="_blank">Bandcamp</a>
+						| <i class="fab fa-spotify icon"></i><a href="https://open.spotify.com/album/2U4t66HEtzIkgdjSwiJDko?si=KVVNvuH1RRqEDs6A9ByEZw" target="_blank">Spotify</a>
 					</div>
 				</div>
 				<div class="v2-album-cover">
@@ -185,6 +240,15 @@
 		<h1>💿 Single & EP Releases</h1>
 
 		<div class="v2-album-container">
+			<div class="v2-album-cover single">
+				<div class="v2-cover"><img src="img/single-oceansecrets.jpg" /></div>
+				<div class="item-info info-single">
+					<strong>Ocean Secrets (2020)</strong><br /><br />
+					Part of the "Continue RESTORE" Compilation.
+					<br /><br />
+					<a href="https://continuecomp.bandcamp.com/" target="_blank">🎧 LISTEN</a>
+				</div>
+			</div>
 			<div class="v2-album-cover single">
 				<div class="v2-cover"><img src="img/single-cloud10.jpg" /></div>
 				<div class="item-info info-single">
@@ -338,18 +402,7 @@
 				</div>
 			</div>
 			<div class="v2-album-cover">
-				<div class="v2-cover game"><img src="img/game-vegaman.JPG" /></div>
-				<div class="item-info info-game">
-					<strong>Vegaman (2019)</strong><br /><br />
-					This is an arcade game made during Ankama Game Jam #2 by Thomas Baron, Sylvain Guerrero, Mojo, NoNameNoSocks and myself<br />
-					I made Soundtracks and SFX for this game.
-					<br /><br />
-					<a href="https://broken-arms.itch.io/vegaman" target="_blank">🎮 PLAY</a> | 
-					<a href="https://grizzlygames.bandcamp.com/album/vegaman" target="_blank">🎧 LISTEN</a>
-				</div>
-			</div>
-			<div class="v2-album-cover">
-				<div class="v2-cover game"><img src="img/game-vegaman.JPG" /></div>
+				<div class="v2-cover game"><img src="img/game-vegaman.jpg" /></div>
 				<div class="item-info info-game">
 					<strong>Vegaman (2019)</strong><br /><br />
 					This is an arcade game made during Ankama Game Jam #2 by Thomas Baron, Sylvain Guerrero, Mojo, NoNameNoSocks and myself<br />

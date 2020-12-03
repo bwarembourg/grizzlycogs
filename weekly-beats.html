@@ -60,8 +60,8 @@
 			}
 			document.getElementById('globalPlay').style.display = 'none';
 			document.getElementById('globalPause').style.display = 'block';
-			src = 'audio/' + tracks[id - 1] + '.mp3';
-			document.getElementById('nowplaying').innerText = src.split('/')[1].split('.mp3')[0];
+			src = 'audio/wb20/' + tracks[id - 1] + '.mp3';
+			document.getElementById('nowplaying').innerText = src.split('/')[2].split('.mp3')[0];
 			idPlaying = id;
 			audio = new Audio(src);
 			audio.play();

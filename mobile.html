@@ -84,13 +84,24 @@
   <div class="content-mobile">
     <h1>📰 What's up ?</h1>
     <div class="news">
+      <div class="date">December 4</div>
+      <div class="news-info">New track for RESTORE compilation !</div>
+      <div class="readmore" onclick="openPopupNews(
+        'img/single-oceansecrets.jpg',
+        'New track for RESTORE compilation !',
+        'I have written a new post-rock chiptune track called \'Ocean Secrets\', for the RESTORE compilation, which also features a lot of great artists such as (T-T)b, 3xBlast, ThronoCrigger, Hexosphere...<br /><br /> All proceeds will go to benefit <a href=\'https://www.ehlers-danlos.com/what-is-eds/\'>The Ehlers Danlos Society</a> via <a href=\'https://thevedsmovement.org/\'>The VEDS Movement</a><br /><br /><a href=\'https://continuecomp.bandcamp.com/\' target=\'_blank\'>🎧 Listen to the whole compilation</a>',
+        'December 4'
+        )">(read more ...)</div>
+    </div>
+    <hr />
+    <div class="news">
       <div class="date">September 4</div>
       <div class="news-info">New arcade / cooking game : "Ice Cream 4ever" ! </div>
       <div class="readmore" onclick="openPopupNews(
         'img/game-icecream4ever.png',
         'New arcade / cooking game : \'Ice Cream 4ever\' ! ',
         'Hey ! I made a game for the Game Boy Jam #8 !<br /><br />It is a cooking / arcade game in which you have to prepare ice cream cones to customers, I made it in one week, and I am pretty happy with the result !<br />Check it out : <br/><br/><a href=\'https://grizzly-games.itch.io/ice-cream-4ever\' target=\'_blank\'>🎮 Play the game (web)</a><br /><br /><a href=\'https://grizzlygames.bandcamp.com/album/ice-cream-4ever\' target=\'_blank\'>🎧 Listen to the original soundtrack</a>',
-        'August 27'
+        'September 4'
         )">(read more ...)</div>
 		</div>
 		<hr />
@@ -127,28 +138,6 @@
         )">(read more ...)</div>
 		</div>
 	</div>
-
-
-	<!-- -->
-	<!-- HELLO -->
-	<!-- -->
-	<div id="hello" class="content-mobile">
-		<h1>🐻 Hello !</h1>
-		<div>
-			<div class="full-mobile">
-				<img src="img/hello.jpg" />
-				📷 <a href="https://loisedoyen.com/" target="_blank">Loïse Doyen</a>
-			</div>
-			<div class="hello-description-mobile">
-				Hello ! I'm Grizzly Cogs. I make electronic and chiptune music, and original soundtrack for games since 2015. 
-				Sometimes it is chill, sometimes it is catchy, sometimes it is melancholic, but it is always about feelings and nostalgia.<br /><br />
-				I released 4 albums and some singles. I also made soundtracks for some web or mobile indie games. 
-				From time to time I like to play my music live. I travelled in 7 countries and play ~30 gigs.<br /><br />
-				Here is a website where you can find all my work. Have fun 😃
-			</div>
-		</div>
-	</div>
-	
 	<!-- -->
 	<!-- RELEASES -->
 	<!-- -->
@@ -201,6 +190,16 @@
     <h2>Singles & EP :</h2>
     <p class="info">(Click on a cover to see details)</p>
     <div class="content-grid">
+      <div class="single-cover-mobile"
+      onclick="openPopup(
+        'img/single-oceansecrets.jpg',
+        'Ocean Secrets (2020)',
+        'Part of the \'Continue RESTORE\' Compilation.',
+        'https://continuecomp.bandcamp.com/'
+        )"
+      >
+				<img src="img/single-oceansecrets.jpg" />
+      </div>
       <div class="single-cover-mobile"
       onclick="openPopup(
         'img/single-cloud10.jpg',
@@ -443,7 +442,8 @@
 				<img src="img/game-gertrude.PNG" class="game" />
 			</div>
     </div>
-	</div>
+  </div>
+  </div>
 	
 	<!-- -->
 	<!-- SHOWS -->
@@ -490,7 +490,7 @@
 			<img src="img/flag-fr.png" class="flag-mobile"> 2017-05-11 | Ankama Bar - Roubaix (FR)
 		</div>
 		<div class="show">
-			<img src="img/flag-de.png" class="flag-mobile"> 2016-04-27 | A MAZE. - Berlin (DE)
+			<img src="img/flag-de.png" class="flag-mobile"> 2017-04-27 | A MAZE. - Berlin (DE)
 		</div>
 		<div class="show">
 			<img src="img/flag-dk.png" class="flag-mobile"> 2017-04-20 | Nordic Game Jam - Copenhagen (DK)
@@ -558,6 +558,26 @@
 				<strong><a href="https://runrunjumppunch.bandcamp.com" target="_blank">LISTEN</a></strong>
 			</div>
 		</div>
+  </div>
+  
+  <!-- -->
+	<!-- HELLO -->
+	<!-- -->
+	<div id="hello" class="content-mobile">
+		<h1>🐻 About</h1>
+		<div>
+			<div class="full-mobile">
+				<img src="img/hello.jpg" />
+				📷 <a href="https://loisedoyen.com/" target="_blank">Loïse Doyen</a>
+			</div>
+			<div class="hello-description-mobile">
+				Hello ! I'm Grizzly Cogs. I make electronic and chiptune music, and original soundtrack for games since 2015. 
+				Sometimes it is chill, sometimes it is catchy, sometimes it is melancholic, but it is always about feelings and nostalgia.<br /><br />
+				I released 4 albums and some singles. I also made soundtracks for some web or mobile indie games. 
+				From time to time I like to play my music live. I travelled in 7 countries and play ~30 gigs.<br /><br />
+				Here is a website where you can find all my work. Have fun 😃
+			</div>
+		</div>
 	</div>
 	
 	<div id="contact" class="content-mobile contact-mobile">
@@ -612,34 +632,28 @@
     <i class="fas fa-bars"></i>
   </div>
   <div class="menu" id="menu">
-    <div class="menu-item">
-      <strong>MENU</strong>
-    </div>
     <div class="close-menu" onclick="closeMenu()">
       <i class="fas fa-times"></i>
     </div>
     <div class="menu-item" onclick="closeMenu()">
-      <a href="#hello">🐻 Hello !</a>
+      <a href="#releases">| 💿 Releases</a>
+    </div>
+    <div class="menu-item">
+      <a href="#game-soundtracks" onclick="closeMenu()">| 🎮 Game soundtracks</a>
     </div>
     <div class="menu-item" onclick="closeMenu()">
-      <a href="#releases">💿 Releases</a>
+      <a href="#shows">| 📆 Shows</a>
     </div>
     <div class="menu-item">
-      <a href="#game-soundtracks" onclick="closeMenu()">🎮 Game soundtracks</a>
-    </div>
-    <div class="menu-item" onclick="closeMenu()">
-      <a href="#shows">📆 Shows</a>
+      <a href="http://grizzlycogs.bandcamp.com" target="_blank" onclick="closeMenu()">| 🎧 Listen</a>
     </div>
     <div class="menu-item">
-      <a href="http://grizzlycogs.bandcamp.com" target="_blank" onclick="closeMenu()">🎧 Listen</a>
+      <a href="#runrunjumppunch" onclick="closeMenu()">| 🎹 Run! Run! Jump! Punch!</a>
     </div>
     <div class="menu-item">
-      <a href="#runrunjumppunch" onclick="closeMenu()">🎹 Run! Run! Jump! Punch!</a>
+      <a href="#hello" onclick="closeMenu()">| 🌠 Contact / About</a>
     </div>
-    <div class="menu-item">
-      <a href="#contact" onclick="closeMenu()">🌠 Contact</a>
-    </div>
-    <div class="menu-item" onclick="closeMenu()">
+    <div class="menu-item centered" onclick="closeMenu()">
       <a href="http://grizzlycogs.bandcamp.com" target="_blank"><i class="fab fa-bandcamp icon"></i></a>
       <a href="https://open.spotify.com/artist/6DYBO57C80qqR0VvCWLwCl?si=n13UY0f_T6OFQw-lRJm5Iw" target="_blank"><i class="fab fa-spotify icon"></i>
       <a href="https://www.instagram.com/grizzlycogs/" target="_blank"><i class="fab fa-instagram icon"></i></a>
