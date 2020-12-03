@@ -492,9 +492,11 @@ hr {
 .weekly-announce {
 	text-align: center;
 	width: 40%;
-	background-color: #FDB81E;
+	background-color: #CAE9E0;
 	padding: 5px;
 	border-radius: 15px;
+	border-width: 1px;
+	border: solid;
 }
 
 .btn {
@@ -504,6 +506,7 @@ hr {
 	border-radius: 10px;
 	cursor: pointer;
 	margin: 5px;
+	border: solid 1px;
 }
 
 .btn:hover {
