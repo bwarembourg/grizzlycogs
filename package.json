@@ -1,0 +1,27 @@
+{
+  "name": "grizzly-cogs-master",
+  "version": "1.0.0",
+  "description": "- add it on the desktop version\r - add it on the mobile, add a onclick function with info from desktop",
+  "main": "miniplayer.js",
+  "dependencies": {
+    "faunadb": "^4.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "bootstrap": "netlify dev:exec node ./scripts/bootstrap-fauna-database.js",
+    "docs": "md-magic --path '**/*.md' --ignore 'node_modules'",
+    "start": "netlify dev",
+    "prebuild": "echo 'setup faunaDB' && npm run bootstrap",
+    "build": "react-scripts build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bwarembourg/grizzlycogs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bwarembourg/grizzlycogs/issues"
+  },
+  "homepage": "https://github.com/bwarembourg/grizzlycogs#readme"
+}
